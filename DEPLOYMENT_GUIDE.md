@@ -2,11 +2,9 @@
 
 Follow these steps to deploy your website to Vercel:
 
-## 1. Prepare Your MongoDB Atlas
-- Create a Cluster on MongoDB Atlas.
-- Add your IP address to the Network Access whitelist.
-- Create a Database User.
-- Copy your **Connection String**.
+## 1. Prepare Your Neon PostgreSQL Database
+- Go to Neon.tech and create a free project.
+- Copy your **Connection String** from the dashboard.
 
 ## 2. Push to GitHub
 - Initialize git in the root folder: `git init`
@@ -18,8 +16,8 @@ Follow these steps to deploy your website to Vercel:
 - Import your repository to Vercel.
 - **Root Directory**: Leave it as the project root.
 - **Environment Variables**:
-  - `MONGODB_URI`: Your MongoDB connection string.
-  - `WHATSAPP_NUMBER`: 918779732651 (without +)
+  - `DATABASE_URL`: Your Neon Postgres connection string.
+  - `WHATSAPP_NUMBER`: 918779732651
   - `PHONE_NUMBER`: +91 8779732651
   - `EMAIL_ADDRESS`: mj6142@gmail.com
   - `BUSINESS_ADDRESS`: https://share.google/0D2kbmr3nEl9lcG9S
