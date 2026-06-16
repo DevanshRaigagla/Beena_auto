@@ -37,7 +37,7 @@ const Models = () => {
              Select your vehicle model to explore specialized parts engineered for your driving experience.
            </p>
            
-           <div className="flex flex-wrap justify-center gap-3 mt-10">
+           <div className="flex overflow-x-auto md:flex-wrap md:justify-center gap-3 mt-10 pb-2 scrollbar-hide">
               {['All', 'Honda', 'BMW', 'Mercedes'].map(brand => (
                 <button
                   key={brand}
