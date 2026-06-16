@@ -5,7 +5,7 @@ import { ChevronRight } from 'lucide-react';
 
 const Models = () => {
   const models = [
-    { id: 'honda-city',    name: 'Honda City',    type: 'Premium Sedan',    img: '/images/honda-city.png'    },
+    { id: 'honda-city',    name: 'Honda City',    type: 'Premium Sedan',    img: '/images/honda-city-gen.png'    },
     { id: 'honda-amaze',   name: 'Honda Amaze',   type: 'Compact Sedan',    img: '/images/honda-amaze.png'   },
     { id: 'honda-civic',   name: 'Honda Civic',   type: 'Sport Sedan',      img: '/images/honda-civic.png'   },
     { id: 'honda-jazz',    name: 'Honda Jazz',    type: 'Premium Hatchback', img: '/images/honda-jazz.png'   },

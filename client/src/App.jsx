@@ -10,6 +10,7 @@ const Models = lazy(() => import('./pages/Models'));
 const ProductDetails = lazy(() => import('./pages/ProductDetails'));
 const Quote = lazy(() => import('./pages/Quote'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Products = lazy(() => import('./pages/Products'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Model specific routes
@@ -30,6 +31,7 @@ function App() {
             <Route path="/categories" element={<Categories />} />
             <Route path="/models" element={<Models />} />
             <Route path="/models/:modelId" element={<ModelDetail />} />
+            <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<ProductDetails />} />
             <Route path="/quote" element={<Quote />} />
             <Route path="/contact" element={<Contact />} />

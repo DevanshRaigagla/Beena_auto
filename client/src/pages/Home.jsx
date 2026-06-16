@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Zap, Award, Search, Filter, Star, Truck, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import bgImage from '../Images/background.png';
 
 const MODELS = ['Honda City', 'Honda Amaze', 'Honda Civic', 'Honda Jazz', 'Honda WR-V', 'Honda CR-V', 'Honda Elevate'];
 
 const MODEL_IMAGES = {
-  'Honda City': '/images/honda-city.png',
+  'Honda City': '/images/honda-city-gen.png',
   'Honda Amaze': '/images/honda-amaze.png',
   'Honda Civic': '/images/honda-civic.png',
   'Honda Jazz': '/images/honda-jazz.png',
@@ -28,9 +29,9 @@ const Home = () => {
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-            alt="Honda Engine"
-            className="w-full h-full object-cover opacity-50"
+            src={bgImage}
+            alt="Genuine Honda Auto Parts"
+            className="w-full h-full object-cover opacity-60"
           />
           {/* Gradient overlays */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
@@ -45,48 +46,63 @@ const Home = () => {
             transition={{ duration: 0.9, ease: 'easeOut' }}
             className="max-w-2xl"
           >
-            <motion.span
+            <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/90 rounded-sm text-[10px] font-bold uppercase tracking-[0.25em] text-white mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#b81d24] text-white rounded-sm text-[10px] font-bold uppercase tracking-widest mb-8"
             >
-              <Star size={10} fill="white" /> Genuine Honda Parts Specialist
-            </motion.span>
+              <span className="font-serif italic font-bold">H</span> GENUINE HONDA PARTS SPECIALIST
+            </motion.div>
 
-            <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] mb-6 text-white">
-              Precision<br />
-              <span className="text-white/70 font-light italic">Engineering.</span><br />
-              <span className="text-primary">Uncompromising</span><br />
-              <span className="text-white/70 font-light italic">Quality.</span>
+            <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] mb-6 text-white tracking-tight">
+              Genuine Parts.<br />
+              <span className="text-[#e32636]">Perfect Fit.</span><br />
+              Honda Performance.
             </h1>
 
             <p className="text-lg text-gray-300 mb-10 leading-relaxed font-light max-w-lg">
-              Discover genuine Honda auto accessories and replacement parts. Engineered for exact fit and maximum performance.
+              Original Honda auto accessories and replacement parts designed for durability, reliability, and peak performance.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-14">
+            <div className="flex flex-col sm:flex-row gap-4 mb-20">
               <Link
                 to="/categories"
-                className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-md font-bold flex items-center justify-center transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:translate-y-[-2px]"
+                className="bg-[#cc0000] hover:bg-[#aa0000] text-white px-8 py-4 rounded-md font-bold flex items-center justify-center transition-all"
               >
-                Explore Catalog <ArrowRight size={20} className="ml-2" />
+                Explore Parts Catalog <ArrowRight size={20} className="ml-2" />
               </Link>
               <Link
                 to="/quote"
-                className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-md font-bold flex items-center justify-center transition-all hover:translate-y-[-2px]"
+                className="bg-transparent hover:bg-white/10 text-white border border-white/40 px-8 py-4 rounded-md font-bold flex items-center justify-center transition-all"
               >
                 Request a Quote
               </Link>
             </div>
-
-            {/* Trust badges */}
-            <div className="flex items-center gap-8 text-gray-400 text-xs font-medium">
-              <div className="flex items-center gap-2"><ShieldCheck size={16} className="text-primary" /> 100% Genuine</div>
-              <div className="flex items-center gap-2"><Truck size={16} className="text-primary" /> Fast Delivery</div>
-              <div className="flex items-center gap-2"><Clock size={16} className="text-primary" /> 28+ Years Trust</div>
-            </div>
           </motion.div>
+        </div>
+
+        {/* Floating Stats Bar */}
+        <div className="absolute bottom-8 left-0 right-0 z-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl p-6 flex flex-col sm:flex-row justify-around items-center gap-6">
+            <div className="flex items-center gap-4 text-white">
+              <div className="p-3 bg-white/5 rounded-full border border-white/10"><ShieldCheck size={24} className="text-[#e32636]" /></div>
+              <div>
+                <h4 className="text-sm font-bold mb-0.5">100% Genuine Parts</h4>
+                <p className="text-xs text-gray-400 font-light">Authorized & trusted by Honda</p>
+              </div>
+            </div>
+
+            {/* Removed Fast Shipping and Expert Support as requested */}
+
+            <div className="flex items-center gap-4 text-white">
+              <div className="p-3 bg-white/5 rounded-full border border-white/10"><Award size={24} className="text-[#e32636]" /></div>
+              <div>
+                <h4 className="text-sm font-bold mb-0.5">28+ Years of Trust</h4>
+                <p className="text-xs text-gray-400 font-light">Serving car owners and workshops</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Scroll indicator */}
@@ -95,63 +111,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── SEARCH BAR ─────────────────────────────────────────────────── */}
-      <div className="bg-white border-b border-gray-100 py-6 px-4 shadow-sm">
-        <div className="max-w-4xl mx-auto flex items-center gap-3 bg-gray-50 rounded-2xl border border-gray-200 px-5 py-3 focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary/30 transition-all">
-          <Search size={20} className="text-gray-400 shrink-0" />
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
-            placeholder="Search by part number, OEM code, or model..."
-            className="flex-grow bg-transparent focus:outline-none text-gray-700 text-sm placeholder:text-gray-400"
-          />
-          <Link to="/categories" className="shrink-0 bg-primary text-white text-xs font-bold px-4 py-2 rounded-xl hover:bg-primary-dark transition-colors">
-            Search
-          </Link>
-        </div>
-      </div>
 
-      {/* ── ESSENTIAL CATEGORIES ───────────────────────────────────────── */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-end mb-12">
-          <div>
-            <p className="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-2">Our Catalog</p>
-            <h2 className="text-3xl font-bold text-secondary">Essential Components</h2>
-            <p className="text-gray-500 mt-2 font-light">Browse our comprehensive catalog of authentic Honda systems.</p>
-          </div>
-          <Link to="/categories" className="text-primary font-bold flex items-center hover:underline text-sm shrink-0">
-            View All <ArrowRight size={16} className="ml-1" />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-          {[
-            { title: 'Braking Systems', desc: 'Pads, Rotors, Calipers', img: '/images/parts-brake.png', link: '/categories' },
-            { title: 'Suspension', desc: 'Shocks, Struts, Arms', img: '/images/parts-suspension.png', link: '/categories' },
-            { title: 'Filters & Fluids', desc: 'Oil, Air, Cabin, Coolant', img: '/images/parts-filters.png', link: '/categories' },
-            { title: 'Electrical', desc: 'Batteries, Alternators, Bulbs', img: '/images/parts-electrical.png', link: '/categories' },
-          ].map((item, idx) => (
-            <Link
-              to={item.link}
-              key={idx}
-              className="group bg-white rounded-2xl border border-gray-100 hover:border-primary/20 hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
-            >
-              <div className="h-36 bg-gray-50 overflow-hidden flex items-center justify-center p-4">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="font-bold text-secondary mb-1 text-sm">{item.title}</h3>
-                <p className="text-xs text-gray-500 font-light">{item.desc}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
 
       {/* ── HONDA MODELS ───────────────────────────────────────────────── */}
       <section className="py-20 bg-gray-50">
@@ -207,7 +167,6 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {[
               { icon: <ShieldCheck size={32} />, title: '100% Genuine', desc: 'All parts sourced directly from authorized Honda manufacturers. Quality you can trust.' },
-              { icon: <Truck size={32} />, title: 'Fast Shipping', desc: 'Nationwide delivery within 2-3 working days. Express options available.' },
               { icon: <Award size={32} />, title: '28+ Years Trust', desc: 'Serving car owners and workshops since 1998 with dedication and expertise.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center p-8 rounded-2xl bg-gray-50 border border-gray-100">

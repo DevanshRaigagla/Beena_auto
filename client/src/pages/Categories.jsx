@@ -6,39 +6,40 @@ const Categories = () => {
   const [searchTerm, setSearchTerm] = useState('');
   
   const categories = [
-    { name: "Engine Parts", count: 1240, img: "/images/parts-engine.png" },
-    { name: "Brake Parts", count: 856, img: "/images/parts-brake.png" },
-    { name: "Suspension Parts", count: 642, img: "/images/parts-suspension.png" },
-    { name: "Electrical Parts", count: 934, img: "/images/parts-electrical.png" },
-    { name: "Filters", count: 428, img: "/images/parts-filters.png" },
-    { name: "Cooling System", count: 315, img: "/images/parts-cooling.png" },
-    { name: "Steering Parts", count: 275, img: "/images/parts-steering.png" },
-    { name: "Body Parts", count: 1542, img: "/images/parts-body.png" },
-    { name: "Accessories", count: 890, img: "/images/parts-accessories.png" },
+    { name: "Engine Parts", count: 3, img: "/images/parts-engine.png" },
+    { name: "Brake Parts", count: 2, img: "/images/parts-brake.png" },
+    { name: "Suspension Parts", count: 1, img: "/images/parts-suspension.png" },
+    { name: "Steering Parts", count: 2, img: "/images/parts-steering.png" },
+    { name: "Transmission", count: 2, img: "/images/parts-transmission.png" },
+    { name: "Filters", count: 1, img: "/images/parts-filters.png" },
+    { name: "Cooling System", count: 1, img: "/images/parts-cooling.png" },
+    { name: "Electrical Parts", count: 0, img: "/images/parts-electrical.png" },
+    { name: "Body Parts", count: 0, img: "/images/parts-body.png" },
   ];
 
   return (
     <div className="bg-gray-50 min-h-screen pt-20">
-      <section className="bg-white border-b border-gray-100 py-12">
+      {/* Compact Sticky Header */}
+      <div className="bg-white/95 backdrop-blur-md border-b border-gray-100 py-4 sticky top-20 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
              <div>
-               <h1 className="text-3xl font-bold text-secondary mb-2">Spare Parts Categories</h1>
-               <p className="text-gray-500">Find the exact component using our structured catalog.</p>
+               <h1 className="text-2xl font-bold text-secondary mb-1">Spare Parts Categories</h1>
+               <p className="text-gray-500 text-sm hidden md:block">Find the exact component using our structured catalog.</p>
              </div>
-             <div className="relative max-w-md w-full">
+             <div className="relative max-w-full md:max-w-md w-full">
                <input 
                  type="text" 
                  placeholder="Search categories or part names..." 
-                 className="w-full pl-12 pr-4 py-3 rounded-2xl bg-gray-50 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-light"
+                 className="w-full pl-11 pr-4 py-2.5 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-light shadow-sm text-sm"
                  value={searchTerm}
                  onChange={(e) => setSearchTerm(e.target.value)}
                />
-               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
              </div>
            </div>
         </div>
-      </section>
+      </div>
 
       <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

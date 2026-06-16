@@ -19,17 +19,30 @@ const Quote = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    
     try {
-      // API call to backend
-      await axios.post('/api/inquiries', { ...formData, type: 'Quote' });
+      const message = `*New Parts Inquiry (Beena Auto)*\n\n` +
+        `*Name:* ${formData.name}\n` +
+        `*Mobile:* ${formData.mobile}\n` +
+        `*Email:* ${formData.email || 'N/A'}\n` +
+        `*Honda Model:* ${formData.hondaModel}\n` +
+        `*Requested Part:* ${formData.partName}\n` +
+        `*VIN/Chassis:* ${formData.vinNumber || 'N/A'}\n` +
+        `*Additional Notes:* ${formData.notes || 'None'}`;
+
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/918779732651?text=${encodedMessage}`;
+      
+      window.open(whatsappUrl, '_blank');
+      
       setSubmitted(true);
       window.scrollTo(0, 0);
     } catch (error) {
       console.error('Submission failed', error);
-      alert('Failed to submit quote request. Please try again.');
+      alert('Failed to launch WhatsApp. Please try again or contact us directly.');
     } finally {
       setLoading(false);
     }

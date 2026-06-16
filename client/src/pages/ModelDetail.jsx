@@ -10,7 +10,7 @@ const ModelDetail = () => {
   useEffect(() => {
     // Mocking model data based on modelId
     const models = {
-      'honda-city':    { name: 'Honda City',    yearRange: '1998 - 2024', img: '/images/honda-city.png'    },
+      'honda-city':    { name: 'Honda City',    yearRange: '1998 - 2024', img: '/images/honda-city-gen.png'    },
       'honda-amaze':   { name: 'Honda Amaze',   yearRange: '2013 - 2024', img: '/images/honda-amaze.png'   },
       'honda-civic':   { name: 'Honda Civic',   yearRange: '2006 - 2024', img: '/images/honda-civic.png'   },
       'honda-jazz':    { name: 'Honda Jazz',    yearRange: '2004 - 2022', img: '/images/honda-jazz.png'    },
@@ -58,9 +58,15 @@ const ModelDetail = () => {
 
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: 'Iridium Spark Plug Set (x4)', category: 'Engine', oem: '12290-R48-H01', img: '/images/parts-engine.png' },
+              { name: 'Iridium Spark Plug Set', category: 'Engine', oem: '12290-R48-H01', img: '/images/parts-engine.png' },
               { name: 'Engine Air Filter Assembly', category: 'Filters', oem: '17220-5A2-A00', img: '/images/parts-filters.png' },
-              { name: 'Front Ceramic Brake Pads', category: 'Brakes', oem: '45022-T2G-A01', img: '/images/parts-brake.png' }
+              { name: 'Front Ceramic Brake Pads', category: 'Brakes', oem: '45022-T2G-A01', img: '/images/parts-brake.png' },
+              { name: 'Manual Clutch Plate', category: 'Transmission', oem: '22200-RNR-M01', img: '/images/parts-transmission.png' },
+              { name: 'Steering Ball Joint', category: 'Steering', oem: '51220-SDA-A02', img: '/images/parts-steering.png' },
+              { name: 'Outer Tie Rod End', category: 'Steering', oem: '53540-S04-013', img: '/images/parts-steering.png' },
+              { name: 'Front Lower Control Arm', category: 'Suspension', oem: '51350-TBA-A00', img: '/images/parts-suspension.png' },
+              { name: 'Ventilated Brake Disc', category: 'Brakes', oem: '45251-T2G-A01', img: '/images/parts-brake.png' },
+              { name: 'Clutch Pressure Plate', category: 'Transmission', oem: '22300-RNR-M01', img: '/images/parts-transmission.png' }
             ].map((part, idx) => (
               <div key={idx} className="bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all group">
                  <div className="h-56 bg-gray-50 flex items-center justify-center p-8 relative">

@@ -30,7 +30,7 @@ const Contact = () => {
                      <div>
                         <h4 className="text-xl font-bold text-secondary mb-1 italic">Quick WhatsApp</h4>
                         <p className="text-gray-500 font-light">Instant availability checks.</p>
-                        <a href="https://wa.me/WHATSAPP_NUMBER" target="_blank" rel="noreferrer" className="text-primary font-bold text-lg mt-2 inline-block">Message Support</a>
+                        <a href="https://wa.me/918779732651" target="_blank" rel="noreferrer" className="text-primary font-bold text-lg mt-2 inline-block">Message Support</a>
                      </div>
                   </div>
 
@@ -66,7 +66,7 @@ const Contact = () => {
                         <MapPin size={24} className="mr-3 text-primary" /> Our Location
                      </h4>
                      <p className="text-gray-500 font-light mb-8">
-                        BUSINESS_ADDRESS
+                        428, Lamington Rd, Opera House, Mumbai, Maharashtra 400004
                      </p>
                      <div className="rounded-2xl overflow-hidden h-72 border border-gray-200">
                         {/* Embedded Google Map Placeholder */}
