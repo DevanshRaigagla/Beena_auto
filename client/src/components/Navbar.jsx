@@ -38,13 +38,12 @@ const Navbar = () => {
         <div className="flex justify-between h-20 items-center">
 
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0 flex items-center gap-1">
-            <span className={`text-2xl font-bold tracking-tight transition-colors ${solidBg ? 'text-primary' : 'text-white'}`}>
-              Beena Auto
-            </span>
-            <span className={`font-light italic text-sm ml-1 transition-colors ${solidBg ? 'text-secondary' : 'text-white/60'}`}>
-              Accessories
-            </span>
+          <Link to="/" className="flex-shrink-0 flex items-center">
+            <img
+              src="/logo.png"
+              alt="Beena Auto Accessories"
+              className="h-16 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop links */}
