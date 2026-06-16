@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Search, Filter, ArrowRight } from 'lucide-react';
 
-const ALL_PRODUCTS = [
+export const ALL_PRODUCTS = [
   { id: '0', name: 'Iridium Spark Plug Set', category: 'Engine Parts', oem: '12290-R48-H01', cars: 'Honda City, Amaze', img: '/images/parts-engine.png' },
   { id: '1', name: 'Engine Air Filter Assembly', category: 'Filters', oem: '17220-5A2-A00', cars: 'Honda Civic, CR-V', img: '/images/parts-filters.png' },
   { id: '2', name: 'Front Ceramic Brake Pads', category: 'Brake Parts', oem: '45022-T2G-A01', cars: 'Honda Accord, CR-V', img: '/images/parts-brake.png' },
@@ -15,6 +15,10 @@ const ALL_PRODUCTS = [
   { id: '9', name: 'Engine Timing Belt', category: 'Engine Parts', oem: '14400-PMM-A02', cars: 'Honda Civic, City', img: '/images/parts-engine.png' },
   { id: '10', name: 'Water Pump Assembly', category: 'Cooling System', oem: '19200-RBC-013', cars: 'Honda CR-V, Accord', img: '/images/parts-cooling.png' },
   { id: '11', name: 'Fuel Injector Nozzle', category: 'Engine Parts', oem: '16450-RNA-A01', cars: 'Honda Jazz, WR-V', img: '/images/parts-engine.png' },
+  { id: '12', name: 'Premium Engine Oil Filter', category: 'Filters', oem: '11428507683', cars: 'BMW 3 Series, 5 Series', img: '/images/parts-filters.png' },
+  { id: '13', name: 'M-Sport Ceramic Brake Pads', category: 'Brake Parts', oem: '34116850885', cars: 'BMW X5, 5 Series', img: '/images/parts-brake.png' },
+  { id: '14', name: 'Active Carbon Cabin Filter', category: 'Filters', oem: 'A2058350147', cars: 'Mercedes C-Class, E-Class', img: '/images/parts-filters.png' },
+  { id: '15', name: 'AirMatic Shock Absorber', category: 'Suspension Parts', oem: 'A1663201313', cars: 'Mercedes GLE', img: '/images/parts-suspension.png' },
 ];
 
 const Products = () => {
@@ -22,6 +26,7 @@ const Products = () => {
   const categoryParam = searchParams.get('category');
   
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedBrand, setSelectedBrand] = useState(searchParams.get('brand') || 'All');
   const [filteredProducts, setFilteredProducts] = useState(ALL_PRODUCTS);
 
   useEffect(() => {
@@ -40,9 +45,14 @@ const Products = () => {
         p.oem.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
+
+    // Filter by brand
+    if (selectedBrand !== 'All') {
+      filtered = filtered.filter(p => p.cars.includes(selectedBrand));
+    }
     
     setFilteredProducts(filtered);
-  }, [categoryParam, searchTerm]);
+  }, [categoryParam, searchTerm, selectedBrand]);
 
   return (
     <div className="bg-gray-50 min-h-screen pt-20">
@@ -51,9 +61,27 @@ const Products = () => {
            <h1 className="text-4xl md:text-5xl font-extrabold text-secondary mb-4 italic capitalize">
              {categoryParam ? categoryParam.replace(/-/g, ' ') : 'All Genuine Parts'}
            </h1>
-           <p className="text-gray-500 max-w-2xl mx-auto text-lg font-light leading-relaxed">
-             Browse our comprehensive catalog of authentic Honda OEM components. Guaranteed fit and performance for your vehicle.
+           <p className="text-gray-500 max-w-2xl mx-auto text-lg font-light leading-relaxed mb-8">
+             Browse our comprehensive catalog of authentic OEM components. Guaranteed fit and performance for your vehicle.
            </p>
+
+           {/* Brand Filter Tabs */}
+           <div className="flex flex-wrap justify-center items-center gap-2">
+             <span className="text-xs font-bold text-gray-400 uppercase tracking-widest mr-2">Brand:</span>
+             {['All', 'Honda', 'BMW', 'Mercedes'].map(brand => (
+               <button
+                 key={brand}
+                 onClick={() => setSelectedBrand(brand)}
+                 className={`px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all ${
+                   selectedBrand === brand 
+                     ? 'bg-secondary text-white shadow-md' 
+                     : 'bg-gray-50 text-gray-500 hover:bg-gray-100 border border-gray-100'
+                 }`}
+               >
+                 {brand}
+               </button>
+             ))}
+           </div>
         </div>
       </section>
 

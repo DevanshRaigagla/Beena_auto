@@ -4,21 +4,26 @@ import { ArrowRight, ShieldCheck, Zap, Award, Search, Filter, Star, Truck, Clock
 import { Link } from 'react-router-dom';
 import bgImage from '../Images/background.png';
 
-const MODELS = ['Honda City', 'Honda Amaze', 'Honda Civic', 'Honda Jazz', 'Honda WR-V', 'Honda CR-V', 'Honda Elevate'];
-
-const MODEL_IMAGES = {
-  'Honda City': '/images/honda-city-gen.png',
-  'Honda Amaze': '/images/honda-amaze.png',
-  'Honda Civic': '/images/honda-civic.png',
-  'Honda Jazz': '/images/honda-jazz.png',
-  'Honda WR-V': '/images/honda-wrv.png',
-  'Honda CR-V': '/images/honda-crv.png',
-  'Honda Elevate': '/images/honda-elevate.png',
-};
+const MODELS = [
+  { brand: 'Honda', name: 'Honda City', type: 'Premium Sedan', img: '/images/honda-city-gen.png' },
+  { brand: 'Honda', name: 'Honda Amaze', type: 'Compact Sedan', img: '/images/honda-amaze.png' },
+  { brand: 'Honda', name: 'Honda Civic', type: 'Sport Sedan', img: '/images/honda-civic.png' },
+  { brand: 'Honda', name: 'Honda Jazz', type: 'Premium Hatchback', img: '/images/honda-jazz.png' },
+  { brand: 'Honda', name: 'Honda CR-V', type: 'Premium SUV', img: '/images/honda-crv.png' },
+  { brand: 'Honda', name: 'Honda Elevate', type: 'Compact SUV', img: '/images/honda-elevate.png' },
+  { brand: 'BMW', name: 'BMW 3 Series', type: 'Luxury Sedan', img: '/images/3series.png' },
+  { brand: 'BMW', name: 'BMW X5', type: 'Luxury SUV', img: 'https://images.unsplash.com/photo-1608660601449-cd0586e92b3a?auto=format&fit=crop&w=800&q=80' },
+  { brand: 'BMW', name: 'BMW 5 Series', type: 'Executive Sedan', img: 'https://images.unsplash.com/photo-1556800572-1b8aeef2c54f?auto=format&fit=crop&w=800&q=80' },
+  { brand: 'Mercedes', name: 'Mercedes C-Class', type: 'Luxury Sedan', img: '/images/c-class.png' },
+  { brand: 'Mercedes', name: 'Mercedes E-Class', type: 'Executive Sedan', img: '/images/E-class.png' },
+  { brand: 'Mercedes', name: 'Mercedes GLE', type: 'Luxury SUV', img: '/images/GLE.png' },
+];
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, show: (i) => ({ opacity: 1, y: 0, transition: { delay: i * 0.12, duration: 0.6 } }) };
 
 const Home = () => {
+  const [selectedBrand, setSelectedBrand] = useState('Honda');
+  const filteredModels = MODELS.filter(m => m.brand === selectedBrand);
   const [searchQuery, setSearchQuery] = useState('');
 
   return (
@@ -116,18 +121,35 @@ const Home = () => {
       {/* ── HONDA MODELS ───────────────────────────────────────────────── */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <p className="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-2">Find Your Vehicle</p>
-            <h2 className="text-4xl font-bold text-secondary mb-4">Compatible Honda Models</h2>
+            <h2 className="text-4xl font-bold text-secondary mb-4">Premium Brands</h2>
             <p className="text-gray-500 max-w-xl mx-auto font-light">
               Select your vehicle to view precision-engineered genuine parts tailored for your model year and trim.
             </p>
           </div>
 
+          {/* Brand Tabs */}
+          <div className="flex justify-center gap-4 mb-12">
+            {['Honda', 'BMW', 'Mercedes'].map(brand => (
+              <button
+                key={brand}
+                onClick={() => setSelectedBrand(brand)}
+                className={`px-8 py-3 rounded-full text-sm font-bold uppercase tracking-widest transition-all ${
+                  selectedBrand === brand 
+                    ? 'bg-secondary text-white shadow-lg' 
+                    : 'bg-white text-gray-500 border border-gray-200 hover:border-primary hover:text-primary'
+                }`}
+              >
+                {brand}
+              </button>
+            ))}
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {MODELS.map((model, idx) => (
+            {filteredModels.map((model, idx) => (
               <motion.div
-                key={idx}
+                key={model.name}
                 custom={idx}
                 initial="hidden"
                 whileInView="show"
@@ -137,19 +159,19 @@ const Home = () => {
               >
                 <div className="h-44 overflow-hidden relative bg-gray-50 flex items-center justify-center">
                   <img
-                    src={MODEL_IMAGES[model]}
-                    alt={model}
-                    className="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-700"
+                    src={model.img}
+                    alt={model.name}
+                    className={`w-full h-full group-hover:scale-105 transition-transform duration-700 ${model.brand === 'Honda' ? 'object-contain p-3' : 'object-cover'}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                   <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-[9px] font-bold uppercase tracking-wider text-gray-600 px-2 py-1 rounded-full">
-                    {idx % 2 === 0 ? 'Sedan' : 'SUV'}
+                    {model.type}
                   </span>
                 </div>
                 <div className="p-5">
-                  <h3 className="text-base font-bold text-secondary mb-4">{model}</h3>
+                  <h3 className="text-base font-bold text-secondary mb-4">{model.name}</h3>
                   <Link
-                    to={`/models/${model.toLowerCase().replace(' ', '-')}`}
+                    to={`/models/${model.name.toLowerCase().replace(/ /g, '-')}`}
                     className="w-full block text-center py-2.5 bg-secondary text-white text-xs font-bold rounded-xl hover:bg-primary transition-all duration-300"
                   >
                     View Compatible Parts →

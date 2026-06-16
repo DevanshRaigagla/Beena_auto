@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <h3 className="text-white text-xl font-bold mb-6">Beena Auto <span className="text-primary italic font-normal text-sm">Accessories</span></h3>
             <p className="text-sm leading-relaxed">
-              Premium Honda 4-Wheeler spare parts specialist. Providing genuine quality and precision engineering for all your automotive needs.
+              Premium multi-brand 4-Wheeler spare parts specialist. Providing genuine quality and precision engineering for all your automotive needs.
             </p>
             <div className="flex space-x-4 mt-6">
               <a href="#" className="hover:text-primary transition-colors"><Globe size={20} /></a>
@@ -23,7 +23,7 @@ const Footer = () => {
             <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
             <ul className="space-y-4 text-sm mt-2">
               <li><Link to="/categories" className="hover:text-white transition-colors">Genuine Parts</Link></li>
-              <li><Link to="/models" className="hover:text-white transition-colors">Honda Models</Link></li>
+              <li><Link to="/models" className="hover:text-white transition-colors">Car Models</Link></li>
               <li><Link to="/quote" className="hover:text-white transition-colors">Request a Quote</Link></li>
               <li><Link to="/about" className="hover:text-white transition-colors">About Story</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
@@ -61,7 +61,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
-          <p>© 2024 Beena Auto Accessories. All Rights Reserved. Genuine Honda Parts.</p>
+          <p>© 2024 Beena Auto Accessories. All Rights Reserved. Premium OEM Parts.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-white">Privacy Policy</a>
             <a href="#" className="hover:text-white">Terms of Service</a>

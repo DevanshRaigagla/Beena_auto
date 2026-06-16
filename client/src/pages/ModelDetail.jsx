@@ -17,6 +17,12 @@ const ModelDetail = () => {
       'honda-wr-v':    { name: 'Honda WR-V',    yearRange: '2017 - 2024', img: '/images/honda-wrv.png'     },
       'honda-cr-v':    { name: 'Honda CR-V',    yearRange: '2007 - 2024', img: '/images/honda-crv.png'     },
       'honda-elevate': { name: 'Honda Elevate', yearRange: '2023 - 2024', img: '/images/honda-elevate.png' },
+      'bmw-3':         { name: 'BMW 3 Series',  yearRange: '1975 - 2024', img: '/images/3series.png' },
+      'bmw-x5':        { name: 'BMW X5',        yearRange: '1999 - 2024', img: 'https://images.unsplash.com/photo-1608660601449-cd0586e92b3a?auto=format&fit=crop&w=800&q=80' },
+      'bmw-5':         { name: 'BMW 5 Series',  yearRange: '1972 - 2024', img: 'https://images.unsplash.com/photo-1556800572-1b8aeef2c54f?auto=format&fit=crop&w=800&q=80' },
+      'mercedes-c':    { name: 'Mercedes C-Class', yearRange: '1993 - 2024', img: '/images/c-class.png' },
+      'mercedes-e':    { name: 'Mercedes E-Class', yearRange: '1993 - 2024', img: '/images/E-class.png' },
+      'mercedes-gle':  { name: 'Mercedes GLE',     yearRange: '2015 - 2024', img: '/images/GLE.png' },
     };
     
     setTimeout(() => {

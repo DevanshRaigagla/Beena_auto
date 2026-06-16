@@ -7,7 +7,7 @@ const Quote = () => {
     name: '',
     mobile: '',
     email: '',
-    hondaModel: '',
+    carModel: '',
     partName: '',
     vinNumber: '',
     notes: ''
@@ -28,7 +28,7 @@ const Quote = () => {
         `*Name:* ${formData.name}\n` +
         `*Mobile:* ${formData.mobile}\n` +
         `*Email:* ${formData.email || 'N/A'}\n` +
-        `*Honda Model:* ${formData.hondaModel}\n` +
+        `*Vehicle Model:* ${formData.carModel}\n` +
         `*Requested Part:* ${formData.partName}\n` +
         `*VIN/Chassis:* ${formData.vinNumber || 'N/A'}\n` +
         `*Additional Notes:* ${formData.notes || 'None'}`;
@@ -73,7 +73,7 @@ const Quote = () => {
            <div className="bg-secondary p-12 text-white text-center relative overflow-hidden">
               <div className="relative z-10">
                 <h1 className="text-4xl font-bold mb-4 italic">Parts Inquiry</h1>
-                <p className="text-gray-400 font-light text-lg">Detailed request for specific genuine Honda components.</p>
+                <p className="text-gray-400 font-light text-lg">Detailed request for specific premium OEM components.</p>
               </div>
               <div className="absolute top-0 right-0 p-10 opacity-10">
                 <HelpCircle size={150} />
@@ -85,10 +85,10 @@ const Quote = () => {
                 <label className="block text-secondary font-bold mb-3 uppercase tracking-wider text-[10px]">Vehicle Model & Year *</label>
                 <input 
                   required 
-                  name="hondaModel"
-                  value={formData.hondaModel}
+                  name="carModel"
+                  value={formData.carModel}
                   onChange={handleChange}
-                  placeholder="e.g., Honda City 2022 ZX" 
+                  placeholder="e.g., BMW 3 Series 2022" 
                   className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-light"
                 />
               </div>
