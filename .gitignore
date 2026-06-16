@@ -1,0 +1,8 @@
+node_modules/
+.env
+.DS_Store
+dist/
+build/
+beena_auto.db
+beena_auto.db-wal
+beena_auto.db-shm

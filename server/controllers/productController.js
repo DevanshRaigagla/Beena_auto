@@ -1,17 +1,17 @@
 const Product = require('../models/Product');
 
-exports.getProducts = (req, res) => {
+exports.getProducts = async (req, res) => {
   try {
-    const products = Product.find();
+    const products = await Product.find();
     res.json(products);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
-exports.getProductById = (req, res) => {
+exports.getProductById = async (req, res) => {
   try {
-    const product = Product.findById(req.params.id);
+    const product = await Product.findById(req.params.id);
     if (!product) return res.status(404).json({ message: 'Product not found' });
     res.json(product);
   } catch (error) {
@@ -19,9 +19,9 @@ exports.getProductById = (req, res) => {
   }
 };
 
-exports.getCategories = (req, res) => {
+exports.getCategories = async (req, res) => {
   try {
-    const categories = Product.distinct();
+    const categories = await Product.distinct();
     res.json(categories);
   } catch (error) {
     res.status(500).json({ message: error.message });
