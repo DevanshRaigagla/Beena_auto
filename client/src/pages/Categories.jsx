@@ -6,15 +6,15 @@ const Categories = () => {
   const [searchTerm, setSearchTerm] = useState('');
   
   const categories = [
-    { name: "Engine Parts", count: 1240, img: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=400&q=80" },
-    { name: "Brake Parts", count: 450, img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=400&q=80" },
-    { name: "Suspension Parts", count: 820, img: "https://images.unsplash.com/photo-1598209279122-8541213a0387?auto=format&fit=crop&w=400&q=80" },
-    { name: "Electrical Parts", count: 630, img: "https://images.unsplash.com/photo-1620288627223-53302f4e8c70?auto=format&fit=crop&w=400&q=80" },
-    { name: "Filters", count: 180, img: "https://images.unsplash.com/photo-1530046339160-ce3e5b087ea2?auto=format&fit=crop&w=400&q=80" },
-    { name: "Cooling System", count: 310, img: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=400&q=80" },
-    { name: "Steering Parts", count: 240, img: "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=400&q=80" },
-    { name: "Body Parts", count: 1540, img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=400&q=80" },
-    { name: "Accessories", count: 3200, img: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=400&q=80" }
+    { name: "Engine Parts", count: 1240, img: "/images/parts-engine.png" },
+    { name: "Brake Parts", count: 856, img: "/images/parts-brake.png" },
+    { name: "Suspension Parts", count: 642, img: "/images/parts-suspension.png" },
+    { name: "Electrical Parts", count: 934, img: "/images/parts-electrical.png" },
+    { name: "Filters", count: 428, img: "/images/parts-filters.png" },
+    { name: "Cooling System", count: 315, img: "/images/parts-cooling.png" },
+    { name: "Steering Parts", count: 275, img: "/images/parts-steering.png" },
+    { name: "Body Parts", count: 1542, img: "/images/parts-body.png" },
+    { name: "Accessories", count: 890, img: "/images/parts-accessories.png" },
   ];
 
   return (

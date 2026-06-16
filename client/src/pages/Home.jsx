@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const MODELS = ['Honda City', 'Honda Amaze', 'Honda Civic', 'Honda Jazz', 'Honda WR-V', 'Honda CR-V', 'Honda Elevate'];
 
 const MODEL_IMAGES = {
-  'Honda City': '/images/honda-city.jpg',
+  'Honda City': '/images/honda-city.png',
   'Honda Amaze': '/images/honda-amaze.png',
   'Honda Civic': '/images/honda-civic.png',
   'Honda Jazz': '/images/honda-jazz.png',
@@ -84,7 +84,7 @@ const Home = () => {
             <div className="flex items-center gap-8 text-gray-400 text-xs font-medium">
               <div className="flex items-center gap-2"><ShieldCheck size={16} className="text-primary" /> 100% Genuine</div>
               <div className="flex items-center gap-2"><Truck size={16} className="text-primary" /> Fast Delivery</div>
-              <div className="flex items-center gap-2"><Clock size={16} className="text-primary" /> 25+ Years Trust</div>
+              <div className="flex items-center gap-2"><Clock size={16} className="text-primary" /> 28+ Years Trust</div>
             </div>
           </motion.div>
         </div>
@@ -127,21 +127,27 @@ const Home = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           {[
-            { title: 'Braking Systems', desc: 'Pads, Rotors, Calipers', icon: <ShieldCheck size={28} />, bg: 'from-red-50 to-rose-100' },
-            { title: 'Suspension', desc: 'Shocks, Struts, Arms', icon: <Zap size={28} />, bg: 'from-orange-50 to-amber-100' },
-            { title: 'Filters & Fluids', desc: 'Oil, Air, Cabin, Coolant', icon: <Filter size={28} />, bg: 'from-blue-50 to-sky-100' },
-            { title: 'Electrical', desc: 'Batteries, Alternators, Bulbs', icon: <Award size={28} />, bg: 'from-purple-50 to-violet-100' },
+            { title: 'Braking Systems', desc: 'Pads, Rotors, Calipers', img: '/images/parts-brake.png', link: '/categories' },
+            { title: 'Suspension', desc: 'Shocks, Struts, Arms', img: '/images/parts-suspension.png', link: '/categories' },
+            { title: 'Filters & Fluids', desc: 'Oil, Air, Cabin, Coolant', img: '/images/parts-filters.png', link: '/categories' },
+            { title: 'Electrical', desc: 'Batteries, Alternators, Bulbs', img: '/images/parts-electrical.png', link: '/categories' },
           ].map((item, idx) => (
             <Link
-              to="/categories"
+              to={item.link}
               key={idx}
-              className="group bg-white p-7 rounded-2xl border border-gray-100 hover:border-primary/20 hover:shadow-xl transition-all duration-300 flex flex-col"
+              className="group bg-white rounded-2xl border border-gray-100 hover:border-primary/20 hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
             >
-              <div className={`w-14 h-14 bg-gradient-to-br ${item.bg} rounded-2xl flex items-center justify-center text-primary mb-5 group-hover:scale-110 transition-transform`}>
-                {item.icon}
+              <div className="h-36 bg-gray-50 overflow-hidden flex items-center justify-center p-4">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md"
+                />
               </div>
-              <h3 className="font-bold text-secondary mb-1 text-sm">{item.title}</h3>
-              <p className="text-xs text-gray-500 font-light">{item.desc}</p>
+              <div className="p-4">
+                <h3 className="font-bold text-secondary mb-1 text-sm">{item.title}</h3>
+                <p className="text-xs text-gray-500 font-light">{item.desc}</p>
+              </div>
             </Link>
           ))}
         </div>
@@ -202,7 +208,7 @@ const Home = () => {
             {[
               { icon: <ShieldCheck size={32} />, title: '100% Genuine', desc: 'All parts sourced directly from authorized Honda manufacturers. Quality you can trust.' },
               { icon: <Truck size={32} />, title: 'Fast Shipping', desc: 'Nationwide delivery within 2-3 working days. Express options available.' },
-              { icon: <Award size={32} />, title: '25+ Years Trust', desc: 'Serving car owners and workshops since 1998 with dedication and expertise.' },
+              { icon: <Award size={32} />, title: '28+ Years Trust', desc: 'Serving car owners and workshops since 1998 with dedication and expertise.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center p-8 rounded-2xl bg-gray-50 border border-gray-100">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-5">

@@ -5,13 +5,13 @@ import { ChevronRight } from 'lucide-react';
 
 const Models = () => {
   const models = [
-    { id: 'city',    name: 'Honda City',    type: 'Premium Sedan',    img: '/images/honda-city.jpg'    },
-    { id: 'amaze',   name: 'Honda Amaze',   type: 'Compact Sedan',    img: '/images/honda-amaze.png'   },
-    { id: 'civic',   name: 'Honda Civic',   type: 'Sport Sedan',      img: '/images/honda-civic.png'   },
-    { id: 'jazz',    name: 'Honda Jazz',    type: 'Premium Hatchback', img: '/images/honda-jazz.png'   },
-    { id: 'wr-v',    name: 'Honda WR-V',    type: 'Crossover',        img: '/images/honda-wrv.png'     },
-    { id: 'cr-v',    name: 'Honda CR-V',    type: 'Premium SUV',      img: '/images/honda-crv.png'     },
-    { id: 'elevate', name: 'Honda Elevate', type: 'Compact SUV',      img: '/images/honda-elevate.png' },
+    { id: 'honda-city',    name: 'Honda City',    type: 'Premium Sedan',    img: '/images/honda-city.png'    },
+    { id: 'honda-amaze',   name: 'Honda Amaze',   type: 'Compact Sedan',    img: '/images/honda-amaze.png'   },
+    { id: 'honda-civic',   name: 'Honda Civic',   type: 'Sport Sedan',      img: '/images/honda-civic.png'   },
+    { id: 'honda-jazz',    name: 'Honda Jazz',    type: 'Premium Hatchback', img: '/images/honda-jazz.png'   },
+    { id: 'honda-wr-v',    name: 'Honda WR-V',    type: 'Crossover',        img: '/images/honda-wrv.png'     },
+    { id: 'honda-cr-v',    name: 'Honda CR-V',    type: 'Premium SUV',      img: '/images/honda-crv.png'     },
+    { id: 'honda-elevate', name: 'Honda Elevate', type: 'Compact SUV',      img: '/images/honda-elevate.png' },
   ];
 
   return (

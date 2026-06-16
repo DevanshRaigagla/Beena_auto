@@ -10,13 +10,13 @@ const ModelDetail = () => {
   useEffect(() => {
     // Mocking model data based on modelId
     const models = {
-      'city':    { name: 'Honda City',    yearRange: '1998 - 2024', img: '/images/honda-city.jpg'    },
-      'amaze':   { name: 'Honda Amaze',   yearRange: '2013 - 2024', img: '/images/honda-amaze.png'   },
-      'civic':   { name: 'Honda Civic',   yearRange: '2006 - 2024', img: '/images/honda-civic.png'   },
-      'jazz':    { name: 'Honda Jazz',    yearRange: '2004 - 2022', img: '/images/honda-jazz.png'    },
-      'wr-v':    { name: 'Honda WR-V',    yearRange: '2017 - 2024', img: '/images/honda-wrv.png'     },
-      'cr-v':    { name: 'Honda CR-V',    yearRange: '2007 - 2024', img: '/images/honda-crv.png'     },
-      'elevate': { name: 'Honda Elevate', yearRange: '2023 - 2024', img: '/images/honda-elevate.png' },
+      'honda-city':    { name: 'Honda City',    yearRange: '1998 - 2024', img: '/images/honda-city.png'    },
+      'honda-amaze':   { name: 'Honda Amaze',   yearRange: '2013 - 2024', img: '/images/honda-amaze.png'   },
+      'honda-civic':   { name: 'Honda Civic',   yearRange: '2006 - 2024', img: '/images/honda-civic.png'   },
+      'honda-jazz':    { name: 'Honda Jazz',    yearRange: '2004 - 2022', img: '/images/honda-jazz.png'    },
+      'honda-wr-v':    { name: 'Honda WR-V',    yearRange: '2017 - 2024', img: '/images/honda-wrv.png'     },
+      'honda-cr-v':    { name: 'Honda CR-V',    yearRange: '2007 - 2024', img: '/images/honda-crv.png'     },
+      'honda-elevate': { name: 'Honda Elevate', yearRange: '2023 - 2024', img: '/images/honda-elevate.png' },
     };
     
     setTimeout(() => {
@@ -30,9 +30,9 @@ const ModelDetail = () => {
   return (
     <div className="bg-white min-h-screen pt-20">
       {/* Hero */}
-      <section className="relative h-[60vh] overflow-hidden flex items-end">
-         <img src={model.img} alt={model.name} className="absolute inset-0 w-full h-full object-cover" />
-         <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent"></div>
+      <section className="relative h-[60vh] overflow-hidden flex items-end bg-white">
+         <img src={model.img} alt={model.name} className="absolute inset-0 w-full h-full object-cover object-center" />
+         <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/40 to-transparent"></div>
          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 text-white">
             <Link to="/models" className="inline-flex items-center text-gray-400 hover:text-white mb-6 text-xs uppercase tracking-widest transition-colors font-bold">
                <ArrowLeft size={14} className="mr-2" /> Back to Models
@@ -58,13 +58,13 @@ const ModelDetail = () => {
 
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: 'Iridium Spark Plug Set (x4)', category: 'Engine', oem: '12290-R48-H01', img: 'https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=400&q=80' },
-              { name: 'Engine Air Filter Assembly', category: 'Filters', oem: '17220-5A2-A00', img: 'https://images.unsplash.com/photo-1530046339160-ce3e5b087ea2?auto=format&fit=crop&w=400&q=80' },
-              { name: 'Front Ceramic Brake Pads', category: 'Brakes', oem: '45022-T2G-A01', img: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=400&q=80' }
+              { name: 'Iridium Spark Plug Set (x4)', category: 'Engine', oem: '12290-R48-H01', img: '/images/parts-engine.png' },
+              { name: 'Engine Air Filter Assembly', category: 'Filters', oem: '17220-5A2-A00', img: '/images/parts-filters.png' },
+              { name: 'Front Ceramic Brake Pads', category: 'Brakes', oem: '45022-T2G-A01', img: '/images/parts-brake.png' }
             ].map((part, idx) => (
               <div key={idx} className="bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all group">
                  <div className="h-56 bg-gray-50 flex items-center justify-center p-8 relative">
-                    <img src={part.img} alt={part.name} className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500" />
+                    <img src={part.img} alt={part.name} className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" />
                     <span className="absolute top-4 right-4 bg-primary text-white text-[9px] font-bold px-2 py-1 rounded-sm uppercase tracking-widest">Genuine</span>
                  </div>
                  <div className="p-8">
