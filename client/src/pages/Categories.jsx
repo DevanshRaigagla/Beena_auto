@@ -90,7 +90,7 @@ const Categories = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-6 text-white">
                     <span className="text-[10px] font-bold uppercase tracking-widest bg-primary px-2 py-0.5 rounded-sm">
-                      {selectedBrand === 'All' ? 'Premium OEM' : `${selectedBrand} Genuine`}
+                      {selectedBrand === 'All' ? 'Spare Parts' : `${selectedBrand} Spare Parts`}
                     </span>
                     <h3 className="text-2xl font-bold mt-1">{cat.name}</h3>
                   </div>

@@ -4,7 +4,7 @@ import { Menu, X, Phone } from 'lucide-react';
 
 const NAV_LINKS = [
   { to: '/',           label: 'Home'          },
-  { to: '/categories', label: 'Genuine Parts' },
+  { to: '/categories', label: 'Spare Parts' },
   { to: '/models',     label: 'Car Models'    },
   { to: '/quote',      label: 'Inquiry'       },
   { to: '/about',      label: 'About'         },

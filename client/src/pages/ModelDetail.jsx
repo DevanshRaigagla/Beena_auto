@@ -77,12 +77,10 @@ const ModelDetail = () => {
               <div key={idx} className="bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all group">
                  <div className="h-56 bg-gray-50 flex items-center justify-center p-8 relative">
                     <img src={part.img} alt={part.name} className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" />
-                    <span className="absolute top-4 right-4 bg-primary text-white text-[9px] font-bold px-2 py-1 rounded-sm uppercase tracking-widest">Genuine</span>
                  </div>
                  <div className="p-8">
                     <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">{part.category}</p>
                     <h4 className="text-xl font-bold text-secondary mb-4 italic leading-tight">{part.name}</h4>
-                    <p className="text-[10px] font-bold text-gray-400 mb-6 font-mono">OEM: {part.oem}</p>
                     <div className="flex gap-4">
                        <Link to={`/products/${idx}`} className="flex-grow bg-gray-100 text-gray-600 py-3 rounded-lg text-center font-bold text-xs hover:bg-gray-200 transition-colors uppercase tracking-widest">Details</Link>
                        <a href="#" className="bg-primary text-white p-3 rounded-lg hover:bg-primary-dark transition-colors"><MessageCircle size={18} /></a>
